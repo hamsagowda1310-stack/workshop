@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Carthub | Online Store</title>
+    <meta
+      name="description"
+      content="Modern shopping cart website for electronics, home, fashion, beauty and more."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="topbar">
+      <div class="container topbar-inner">
+        <span>Free shipping on orders above $80</span>
+        <span>New season sale up to 40% off</span>
+      </div>
+    </div>
+
+    <header class="header">
+      <div class="container nav-wrap">
+        <div class="logo">Cart<span>Hub</span></div>
+
+        <nav class="nav" aria-label="Main navigation">
+          <button class="nav-link active" data-target="home">Home</button>
+          <button class="nav-link" data-target="home">Products</button>
+          <button class="nav-link" data-target="home" data-scroll="categories">Categories</button>
+          <button class="nav-link" data-target="cart">Cart</button>
+          <button class="nav-link" data-target="wishlist">Wishlist</button>
+          <button class="nav-link" data-target="account">Account</button>
+        </nav>
+
+        <div class="nav-actions">
+          <div class="search-box">
+            <span class="search-icon">⌕</span>
+            <input type="text" id="headerSearch" placeholder="Search products..." />
+          </div>
+          <button class="cart-button" data-target="cart" aria-label="Open cart">
+            <span>Cart</span>
+            <span id="cartCount" class="cart-count">0</span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section id="home" class="page active">
+        <div class="container">
+          <div class="hero">
+            <div class="hero-copy">
+              <p class="eyebrow">Fresh arrivals</p>
+              <h1>Upgrade your everyday essentials.</h1>
+              <p>
+                Discover stylish gadgets, home upgrades, and premium accessories built for a modern lifestyle.
+              </p>
+              <div class="hero-actions">
+                <button class="primary-btn" data-target="home" data-scroll="featured">Shop Now</button>
+                <button class="secondary-btn" data-target="cart">View Cart</button>
+              </div>
+              <div class="hero-stats">
+                <div>
+                  <strong>20k+</strong>
+                  <span>Happy shoppers</span>
+                </div>
+                <div>
+                  <strong>4.9/5</strong>
+                  <span>Customer rating</span>
+                </div>
+                <div>
+                  <strong>48h</strong>
+                  <span>Fast delivery</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="hero-visual">
+              <div class="card-floating card-one">
+                <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=800&q=80" alt="Running shoes" />
+                <div>
+                  <span>Trending</span>
+                  <strong>Sport Edition</strong>
+                </div>
+              </div>
+              <div class="hero-product">
+                <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=900&q=80" alt="Smartwatch" />
+              </div>
+              <div class="card-floating card-two">
+                <span>Limited Deal</span>
+                <strong>Up to 30% off</strong>
+              </div>
+            </div>
+          </div>
+
+          <div class="home-quick-options">
+            <div class="section-heading">
+              <div>
+                <p class="eyebrow">Quick access</p>
+                <h2>Shop by category & order</h2>
+              </div>
+            </div>
+
+            <div class="category-option-grid">
+              <button class="category-option-card" data-category="Saree">
+                <span class="option-icon">🧵</span>
+                <strong>Saree</strong>
+                <small>Festive styles</small>
+              </button>
+              <button class="category-option-card" data-category="Kids Wear">
+                <span class="option-icon">👕</span>
+                <strong>Kids Wear</strong>
+                <small>Comfort & play</small>
+              </button>
+              <button class="category-option-card" data-category="Mens Wear">
+                <span class="option-icon">🧥</span>
+                <strong>Mens Wear</strong>
+                <small>Smart essentials</small>
+              </button>
+              <button class="category-option-card" data-category="Kitchen Sets">
+                <span class="option-icon">🍽️</span>
+                <strong>Kitchen Sets</strong>
+                <small>Home favorites</small>
+              </button>
+              <button class="category-option-card" data-category="Toys">
+                <span class="option-icon">🧸</span>
+                <strong>Toys</strong>
+                <small>Fun & learning</small>
+              </button>
+            </div>
+
+            <div class="quick-order-grid">
+              <div class="order-option">
+                <span class="option-icon">⚡</span>
+                <h3>Quick Order</h3>
+                <p>Buy trending products in seconds.</p>
+                <button class="secondary-btn" data-target="cart">Open Cart</button>
+              </div>
+              <div class="order-option">
+                <span class="option-icon">🛒</span>
+                <h3>Repeat Order</h3>
+                <p>Reuse your favorite products and checkout fast.</p>
+                <button class="secondary-btn" data-target="checkout">Checkout</button>
+              </div>
+              <div class="order-option">
+                <span class="option-icon">💝</span>
+                <h3>Wishlist</h3>
+                <p>Save products you love for later.</p>
+                <button class="secondary-btn" data-target="wishlist">View Wishlist</button>
+              </div>
+            </div>
+          </div>
+
+          <div id="categories" class="categories-section">
+            <div class="section-heading">
+              <div>
+                <p class="eyebrow">Browse</p>
+                <h2>Shop by category</h2>
+              </div>
+            </div>
+            <div id="categoryList" class="category-list" aria-label="Filter products by category"></div>
+          </div>
+
+          <div id="featured" class="products-section">
+            <div class="section-heading">
+              <div>
+                <p class="eyebrow">Featured</p>
+                <h2>Popular products</h2>
+              </div>
+            </div>
+            <div id="productGrid" class="product-grid"></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="product" class="page">
+        <div class="container">
+          <div id="productDetail" class="product-detail"></div>
+        </div>
+      </section>
+
+      <section id="cart" class="page">
+        <div class="container cart-shell">
+          <div class="section-heading cart-heading">
+            <div>
+              <p class="eyebrow">Your bag</p>
+              <h2>Shopping cart</h2>
+            </div>
+          </div>
+
+          <div id="cartItems" class="cart-items"></div>
+
+          <div id="cartSummary" class="cart-summary"></div>
+        </div>
+      </section>
+
+      <section id="account" class="page">
+        <div class="container checkout-wrap">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">My account</p>
+              <h2>Profile & account details</h2>
+            </div>
+          </div>
+
+          <div class="account-grid">
+            <form id="registerForm" class="checkout-form account-form">
+              <div class="profile-header">
+                <div class="avatar">A</div>
+                <div>
+                  <h3 id="profileNameTitle">Account Profile</h3>
+                  <p>Manage your personal and shipping details</p>
+                </div>
+              </div>
+
+              <div class="form-row">
+                <label>
+                  <span>Full name</span>
+                  <input type="text" id="registerName" name="registerName" required />
+                </label>
+                <label>
+                  <span>Email</span>
+                  <input type="email" id="registerEmail" name="registerEmail" required />
+                </label>
+              </div>
+
+              <div class="form-row">
+                <label>
+                  <span>Phone number</span>
+                  <input type="tel" id="registerPhone" name="registerPhone" required />
+                </label>
+                <label>
+                  <span>Password</span>
+                  <input type="password" id="registerPassword" name="registerPassword" required />
+                </label>
+              </div>
+
+              <div class="form-row single-row">
+                <label>
+                  <span>Address</span>
+                  <input type="text" id="registerAddress" name="registerAddress" required />
+                </label>
+              </div>
+
+              <div class="form-row">
+                <label>
+                  <span>City</span>
+                  <input type="text" id="registerCity" name="registerCity" required />
+                </label>
+                <label>
+                  <span>PIN code</span>
+                  <input type="text" id="registerPin" name="registerPin" required />
+                </label>
+              </div>
+
+              <button type="submit" class="primary-btn full-width">Save Profile</button>
+              <button type="button" id="logoutBtn" class="secondary-btn full-width logout-btn" style="display: none;">Logout</button>
+              <div id="registerMessage" class="order-message" aria-live="polite"></div>
+            </form>
+
+            <aside class="checkout-summary-box account-summary-box">
+              <h3>Profile details</h3>
+              <div id="accountSummary" class="account-summary"></div>
+            </aside>
+          </div>
+        </div>
+      </section>
+
+      <section id="wishlist" class="page">
+        <div class="container cart-shell">
+          <div class="section-heading cart-heading">
+            <div>
+              <p class="eyebrow">Saved items</p>
+              <h2>Wishlist</h2>
+            </div>
+          </div>
+
+          <div id="wishlistItems" class="wishlist-items"></div>
+        </div>
+      </section>
+
+      <section id="checkout" class="page">
+        <div class="container checkout-wrap">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">Secure checkout</p>
+              <h2>Complete your order</h2>
+            </div>
+          </div>
+
+          <div class="checkout-grid">
+            <form id="checkoutForm" class="checkout-form">
+              <div class="form-row">
+                <label>
+                  <span>Customer name</span>
+                  <input type="text" id="customerName" name="customerName" required />
+                </label>
+                <label>
+                  <span>Email</span>
+                  <input type="email" id="customerEmail" name="customerEmail" required />
+                </label>
+              </div>
+
+              <div class="form-row">
+                <label>
+                  <span>Phone number</span>
+                  <input type="tel" id="customerPhone" name="customerPhone" required />
+                </label>
+                <label>
+                  <span>Address</span>
+                  <input type="text" id="customerAddress" name="customerAddress" required />
+                </label>
+              </div>
+
+              <div class="form-row">
+                <label>
+                  <span>City</span>
+                  <input type="text" id="customerCity" name="customerCity" required />
+                </label>
+                <label>
+                  <span>PIN code</span>
+                  <input type="text" id="customerPin" name="customerPin" required />
+                </label>
+              </div>
+
+              <div class="payment-box">
+                <span>Payment method</span>
+                <div class="payment-options">
+                  <label><input type="radio" name="paymentMethod" value="Card" checked /> Card</label>
+                  <label><input type="radio" name="paymentMethod" value="UPI" /> UPI</label>
+                  <label><input type="radio" name="paymentMethod" value="Cash on Delivery" /> Cash on Delivery</label>
+                </div>
+              </div>
+
+              <button type="submit" class="primary-btn full-width">Place Order</button>
+              <button type="button" id="cancelOrderBtn" class="secondary-btn full-width logout-btn" style="display: none;">Cancel Order</button>
+              <div id="orderMessage" class="order-message" aria-live="polite"></div>
+            </form>
+
+            <aside class="checkout-summary-box">
+              <h3>Order summary</h3>
+              <div id="checkoutSummary" class="checkout-summary"></div>
+            </aside>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <div id="toast" class="toast" aria-live="polite"></div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
